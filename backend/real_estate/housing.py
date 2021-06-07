@@ -16,13 +16,6 @@ class Housing(object):
         this.housing = pd.read_excel(excel_dir
                                      , sheet_name='평균전세'
                                      )
-        return this
-
-    @staticmethod
-    def print_this(this):
-        print('*' * 100)
-        print(f'1. Housing 의 type\n {type(this.housing)}')
-        print(f'2. Housing 의 column\n {this.housing.columns}')
-        print(f'3. Housing 의 상위 5개 행\n {this.housing.head(5)}')
-        print(f'4. Housing 의 null 의 개수\n {this.housing.isnull().sum()}')
-        print('*' * 100)
+        return pd.read_excel(excel_dir
+                                     , sheet_name='평균전세'
+                                     )
