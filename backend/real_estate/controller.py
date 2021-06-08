@@ -1,4 +1,4 @@
-from real_estate.housing import Housing
+from real_estate.services import Housing
 from real_estate.dataset import Dataset
 
 

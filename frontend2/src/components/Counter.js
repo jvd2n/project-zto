@@ -1,15 +1,8 @@
 import React, { useState } from 'react';
 
-function Counter() {
-  const [count, setCount] = useState(0);
+const Counter = () => {
 
-  function onAddClick() {
-    // alert('+ 클릭')
-  }
-
-  const onSubClick = () => {
-    // alert('- 클릭')
-  }
+  const [count, setCount] = useState(0)
 
   return (
     <div>
