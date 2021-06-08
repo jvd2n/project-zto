@@ -11,7 +11,7 @@ class Housing(object):
     def new_model(self) -> object:
         this = self.dataset
         this.context = './data/'
-        this.fname = 'time_series_cost.xlsx'
+        this.fname = 'time_series_cost2.xlsx'
         excel_dir = os.path.join(this.context, this.fname)
         this.housing = pd.read_excel(excel_dir
                                      , sheet_name='평균전세'
