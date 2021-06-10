@@ -1,40 +1,33 @@
+import os
 from crime.services import CrimeService
-from crime.models import CrimeDTO
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "project.settings")
 
 
 class CrimeApi(object):
 
     @staticmethod
     def main():
-        util = CrimeService()
-        dto = CrimeDTO()
-        dto_array = []
+        crime_svc = CrimeService()
         while 1:
-            menu = input('[1] CREATE DF from csv\n'
-                         '[2] CREATE DF from xls\n'
-                         '[3] Print All DataFrame\n'
+            menu = input('[1] Seoul CCTV DF\n'
+                         '[2] Seoul Crime DF\n'
+                         '[3] PoliceStation DF\n'
+                         '[4] Unemployment DF\n'
+                         '[5] POP Seoul DF\n'
                          '[0] EXIT\n'
                          '>> ')
             if menu == '0':
                 break
             elif menu == '1':
-                dto.dframe = util.new_model_from_csv('cctv_in_seoul.csv')
-                dto_array.append(dto.dframe)
-                dto.dframe = util.new_model_from_csv('crime_in_seoul.csv')
-                dto_array.append(dto.dframe)
-                dto.dframe = util.new_model_from_csv('police_position.csv')
-                dto_array.append(dto.dframe)
-                dto.dframe = util.new_model_from_csv('us_unemployment.csv')
-                dto_array.append(dto.dframe)
-                # util.print_dframe(dto.dframe)
+                crime_svc.csv({'context': './data/', 'fname': 'cctv_in_seoul'})
             elif menu == '2':
-                dto.dframe = util.new_model_from_xls('pop_in_seoul.xls')
-                dto_array.append(dto.dframe)
-                # util.print_dframe(dto.dframe)
+                crime_svc.csv({'context': './data/', 'fname': 'crime_in_seoul'})
             elif menu == '3':
-                for i in dto_array:
-                    util.print_dframe(i)
-                # print(dto_array)
+                crime_svc.csv({'context': './data/', 'fname': 'police_position'})
+            elif menu == '4':
+                crime_svc.csv({'context': './data/', 'fname': 'us_unemployment'})
+            elif menu == '5':
+                crime_svc.xls({'context': './data/', 'fname': 'pop_in_seoul'})
             else:
                 continue
 
