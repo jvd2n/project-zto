@@ -1,5 +1,5 @@
-from crime_cctv.services import CrimeService
-from crime_cctv.models import CrimeDTO
+from crime.services import CrimeService
+from crime.models import CrimeDTO
 
 
 class CrimeApi(object):
