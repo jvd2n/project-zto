@@ -1,19 +1,16 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-/node_modules
+node_modules
+migrations
+.idea
 
-/migrations
-
-/frontend2/node_modules
 /frontend2/coverage
 /frontend2/build
 
-/backend/.idea/
-/frontend_/node_modules
 /frontend_/coverage
 /frontend_/build
 
 # dependencies
-/frontend/node_modules
+
 /frontend/.pnp
 /frontend.pnp.js
 
