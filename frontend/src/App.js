@@ -7,6 +7,7 @@ import { Counter } from 'counter'
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from 'redux';
 import { todoReducer } from './store'
+import { Schedule } from 'todos/containers';
 
 const rootReducer = combineReducers({todoReducer});
 
@@ -25,6 +26,7 @@ const App = () => {
         <Route exact path='/user-detail' component={UserDetail}/>
         <Route exact path='/user-edit' component={UserEdit}/>
         <Route exact path='/user-list' component={UserList}/>
+        <Route exact path='/todos' component={Schedule}/>
       </Provider>
     </Router>
   </div>)

@@ -1,14 +1,15 @@
 import React from 'react'
 import { TodoInput, TodoList } from '../components/index'
 import { Provider } from 'react-redux'
-import { store } from 'store';
+import { store } from 'store'
 
 const Schedule = () => {
   return (<>
-  <Provider store={store}>
+  <Provider store = {store}>
     <TodoInput/>
     <TodoList/>
   </Provider>
+    
   </>);
 };
 
